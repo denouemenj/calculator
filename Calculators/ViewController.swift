@@ -32,6 +32,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttons(_ sender: UIButton)
     {
+        aaaa
         if label.text != "" && sender.tag != 11 && sender.tag != 16 {
             if performingMath==false && haspreviousNumber==true
             {
