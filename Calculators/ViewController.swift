@@ -12,17 +12,17 @@ class ViewController: UIViewController {
     
     var numberOnScreen:Double = 0
     var previousNumber:Double = 0
-    var perfromingMath = false
+    var performingMath = false
     var operation = 0
     var haspreviousNumber = false
     
     @IBOutlet weak var label: UILabel!
     
     @IBAction func numbers(_ sender: UIButton) {
-        if perfromingMath == true{
+        if performingMath == true{
             label.text = String(sender.tag-1)
             numberOnScreen = Double(label.text!)!
-            perfromingMath = false
+            performingMath = false
         }
         else{
             label.text = label.text! + String(sender.tag-1)
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     @IBAction func buttons(_ sender: UIButton)
     {
         if label.text != "" && sender.tag != 11 && sender.tag != 16 {
-            if perfromingMath==false && haspreviousNumber==true
+            if performingMath==false && haspreviousNumber==true
             {
                 if operation == 12 {
                     previousNumber = previousNumber / numberOnScreen
@@ -67,7 +67,7 @@ class ViewController: UIViewController {
                 label.text = "+"
             }
             operation = sender.tag
-            perfromingMath = true
+            performingMath = true
         }
         else if sender.tag == 16 {
             // performing equal
